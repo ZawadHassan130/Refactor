@@ -1,7 +1,6 @@
 package edu.iutcs.cr.persons;
 
 import java.io.Serializable;
-import java.util.Scanner;
 
 /**
  * @author Raian Rahman
@@ -13,7 +12,11 @@ public class Buyer extends Person implements Serializable {
 
     public Buyer() {
         super();
-        setPaymentMethod();
+    }
+
+    public Buyer(String name, String id, String email, String paymentMethod) {
+        super(name, id, email);
+        this.paymentMethod = paymentMethod;
     }
 
     public Buyer(String id) {
@@ -25,9 +28,8 @@ public class Buyer extends Person implements Serializable {
     }
 
     public void setPaymentMethod() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter new payment method:");
-        this.paymentMethod = scanner.nextLine();
+        // keep setter for programmatic use
+        // interactive creation should be done via PersonFactory
     }
 
     @Override
