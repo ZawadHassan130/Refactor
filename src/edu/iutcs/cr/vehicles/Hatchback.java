@@ -1,7 +1,5 @@
 package edu.iutcs.cr.vehicles;
 
-import java.util.Scanner;
-
 /**
  * @author Raian Rahman
  * @since 4/19/2024
@@ -12,7 +10,11 @@ public class Hatchback extends Vehicle {
 
     public Hatchback() {
         super();
-        setCompact();
+    }
+
+    public Hatchback(String registrationNumber, String make, String model, String year, double price, boolean isCompact) {
+        super(registrationNumber, make, model, year, price);
+        this.isCompact = isCompact;
     }
 
     public boolean isCompact() {
@@ -20,9 +22,7 @@ public class Hatchback extends Vehicle {
     }
 
     public void setCompact() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Is the hatchback compact? (true/false): ");
-        this.isCompact = scanner.nextBoolean();
+        // interactive creation via VehicleFactory
     }
 
     @Override
