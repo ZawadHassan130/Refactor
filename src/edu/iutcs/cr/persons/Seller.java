@@ -16,6 +16,10 @@ public class Seller extends Person implements Serializable {
         super(id);
     }
 
+    public Seller(String name, String id, String email) {
+        super(name, id, email);
+    }
+
     @Override
     public String toString() {
         return super.toString();
